@@ -10,8 +10,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
 </head>
-<body>
+<body class="home-page">
   <div class="bg-grid"></div>
+  <div class="home-blob home-blob-a"></div>
+  <div class="home-blob home-blob-b"></div>
+
   <header class="shell-header">
     <div class="shell-inner">
       <a class="logo" href="./index.html">ENDFIELD HUB</a>
@@ -25,36 +28,45 @@
   </header>
 
   <main class="shell-main">
-    <section class="hero">
-      <p class="badge">MVP</p>
-      <h1>ENDFIELD STRATEGY TOOLKIT</h1>
+    <section class="hero hero-cute">
+      <p class="badge badge-cute">MVP GUIDE</p>
+      <h1>ENDFIELD<br>PLAYBOOK</h1>
       <p class="hero-copy">
-        情報閲覧と育成判断を優先したMVP。表示データと計算ロジックを分離し、将来のダメージ計算拡張に備えます。
+        かわいい見た目で、情報は実用重視。キャラ確認、素材逆引き、育成不足計算までをすぐ使える形でまとめています。
       </p>
       <div class="cta-row">
-        <a class="btn-primary" href="./characters.html">キャラを調べる</a>
+        <a class="btn-primary" href="./characters.html">キャラを探す</a>
         <a class="btn-ghost" href="./calculator.html">不足素材を計算</a>
+      </div>
+      <div class="home-mini-grid">
+        <article class="mini-pill">検索とフィルタが速い</article>
+        <article class="mini-pill">source / confidence 表示</article>
+        <article class="mini-pill">計算ロジックは分離設計</article>
       </div>
     </section>
 
-    <section class="panel">
-      <h2>現在の実装範囲</h2>
+    <section class="panel panel-cute">
+      <h2>クイックジャンプ</h2>
       <div class="card-grid">
-        <article class="info-card">
+        <article class="info-card info-card-cute">
           <h3>キャラ一覧 + 詳細</h3>
-          <p>フィルタ、検索、詳細情報、スキル、育成素材、メタ情報を確認できます。</p>
+          <p>属性・役割・武器種で絞って、詳細ページでスキルや育成素材を確認。</p>
+          <a class="text-link" href="./characters.html">一覧を見る</a>
         </article>
-        <article class="info-card">
+        <article class="info-card info-card-cute">
           <h3>素材逆引き</h3>
-          <p>素材ごとに使用キャラを確認し、育成優先順位の判断に使えます。</p>
+          <p>素材名から使用キャラを逆引きして、育成優先度を決めやすく。</p>
+          <a class="text-link" href="./materials.html">素材を見る</a>
         </article>
-        <article class="info-card">
+        <article class="info-card info-card-cute">
           <h3>育成コスト計算</h3>
-          <p>現在レベルから目標レベルまでの必要素材と不足数を算出します。</p>
+          <p>現在レベルから目標レベルまでの必要数と不足数を即チェック。</p>
+          <a class="text-link" href="./calculator.html">計算する</a>
         </article>
-        <article class="info-card">
+        <article class="info-card info-card-cute">
           <h3>更新履歴</h3>
-          <p>バージョン単位の変更内容とデータ対象を追跡できます。</p>
+          <p>バージョン単位の差分と、どのデータを更新したかを追跡。</p>
+          <a class="text-link" href="./updates.html">履歴を見る</a>
         </article>
       </div>
     </section>

@@ -331,3 +331,147 @@ select {
     width: calc(100% - 1.1rem);
   }
 }
+
+/* Home page cute theme */
+.home-page {
+  --bg: #fff6ef;
+  --panel: #ffffffd8;
+  --line: #f2b99f;
+  --text: #432f2d;
+  --muted: #7e6560;
+  --accent: #ff986d;
+  --accent-2: #ffc17e;
+  background:
+    radial-gradient(circle at 10% 0%, #ffd9c3 0%, transparent 42%),
+    radial-gradient(circle at 90% 10%, #ffeab6 0%, transparent 40%),
+    linear-gradient(140deg, #fff7ec, #fff2f9);
+}
+
+.home-page .bg-grid {
+  opacity: 0.1;
+  background-image:
+    linear-gradient(to right, #ffb3901a 1px, transparent 1px),
+    linear-gradient(to bottom, #ffb3901a 1px, transparent 1px);
+}
+
+.home-blob {
+  position: fixed;
+  z-index: 0;
+  border-radius: 999px;
+  filter: blur(6px);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.home-blob-a {
+  width: 240px;
+  height: 240px;
+  right: 6%;
+  top: 18%;
+  background: radial-gradient(circle at 30% 30%, #ffb08f, #ffcfb8);
+  animation: bobA 6s ease-in-out infinite;
+}
+
+.home-blob-b {
+  width: 180px;
+  height: 180px;
+  left: 8%;
+  bottom: 10%;
+  background: radial-gradient(circle at 40% 20%, #ffd78e, #ffecc6);
+  animation: bobB 5s ease-in-out infinite;
+}
+
+.home-page .shell-header,
+.home-page .shell-main {
+  position: relative;
+  z-index: 1;
+}
+
+.home-page .shell-inner {
+  border-color: #efbfab;
+  background: #fffdf9d1;
+}
+
+.home-page .logo {
+  color: #5f3f3c;
+}
+
+.home-page .top-nav a {
+  color: #825f58;
+  border-color: #efbfab;
+  background: #fff9f2;
+}
+
+.home-page .hero-cute {
+  overflow: hidden;
+  border-color: #efbfab;
+  background:
+    radial-gradient(circle at 100% 0%, #ffe4b3 0%, transparent 45%),
+    linear-gradient(160deg, #fffdf8, #fff4ee);
+}
+
+.home-page .hero-cute h1 {
+  line-height: 0.86;
+}
+
+.badge-cute {
+  border-color: #efbfab;
+  color: #8d665f;
+  background: #fff7ef;
+}
+
+.home-page .btn-ghost {
+  border-color: #efbfab;
+  color: #694943;
+  background: #fff7ef;
+}
+
+.home-mini-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0.55rem;
+}
+
+.mini-pill {
+  margin: 0;
+  border: 1px solid #efbfab;
+  border-radius: 999px;
+  background: #fff7ef;
+  color: #7c5953;
+  padding: 0.42rem 0.75rem;
+  font-size: 0.84rem;
+  text-align: center;
+}
+
+.panel-cute {
+  border-color: #efbfab;
+  background:
+    radial-gradient(circle at 0 100%, #ffe9db 0%, transparent 35%),
+    #fffdf9d9;
+}
+
+.info-card-cute {
+  border-color: #efbfab;
+  background: #fff8f1;
+}
+
+@keyframes bobA {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes bobB {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
