@@ -8,7 +8,6 @@
     "weapon_type": "Staff",
     "description": "Support-focused operator with team buff utility.",
     "icon_url": "https://example.com/icons/perlica.png",
-    "version": "0.1.1",
     "source": "official",
     "confidence": "confirmed",
     "updated_at": "2026-02-23"
