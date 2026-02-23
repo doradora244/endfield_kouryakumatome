@@ -1,0 +1,10 @@
+[
+  {
+    "id": "refined_alloy",
+    "name": "Refined Alloy",
+    "category": "Upgrade",
+    "icon_url": "https://example.com/icons/refined_alloy.png",
+    "source": "in_game",
+    "updated_at": "2026-02-23"
+  }
+]

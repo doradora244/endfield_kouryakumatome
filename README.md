@@ -20,6 +20,26 @@
 - `data/upgrade_costs.json`
 - `data/updates.json`
 
+## 外部データ取り込み（半自動）
+
+1. 例ファイルをコピーして raw データを作成
+
+```powershell
+Copy-Item raw/characters.source.example.json raw/characters.source.json
+Copy-Item raw/materials.source.example.json raw/materials.source.json
+```
+
+2. `raw/*.source.json` を外部情報で更新（source/confidence付き）
+
+3. 変換スクリプトを実行
+
+```powershell
+node scripts/import_characters_from_raw.js --version=0.1.1
+node scripts/import_materials_from_raw.js
+```
+
+4. 生成された `data/*.json` を確認してコミット
+
 ## 設計メモ
 
 - 仕様書（日本語）: `docs/END_FIELD_SPEC.md`
