@@ -5,10 +5,8 @@
     "hp": 720,
     "atk": 88,
     "def": 62,
-    "other_stats": {
-      "crit_rate": 0.05,
-      "crit_damage": 0.5
-    },
+    "crit_rate": 0.05,
+    "crit_damage": 0.5,
     "version": "0.1.2",
     "source": "community_verification",
     "confidence": "provisional",
@@ -20,10 +18,8 @@
     "hp": 4620,
     "atk": 482,
     "def": 298,
-    "other_stats": {
-      "crit_rate": 0.05,
-      "crit_damage": 0.5
-    },
+    "crit_rate": 0.05,
+    "crit_damage": 0.5,
     "version": "0.1.2",
     "source": "community_verification",
     "confidence": "provisional",

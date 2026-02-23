@@ -1,0 +1,16 @@
+[
+  {
+    "id": "perlica_lv1_20_alloy",
+    "character_id": "perlica",
+    "upgrade_type": "level",
+    "from_level": 1,
+    "to_level": 20,
+    "material_id": "refined_alloy",
+    "amount": 8,
+    "credit_cost": 1200,
+    "version": "0.1.0",
+    "source": "in_game",
+    "confidence": "confirmed",
+    "updated_at": "2026-02-23"
+  }
+]

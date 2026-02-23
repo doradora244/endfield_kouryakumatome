@@ -23,34 +23,29 @@
       </nav>
     </div>
   </header>
-
   <main class="shell-main">
     <section id="notFound" class="panel hidden">
       <h1 class="page-title">キャラが見つかりません</h1>
       <p class="muted">`characters.html` から選び直してください。</p>
       <a class="btn-primary" href="./characters.html">キャラ一覧へ戻る</a>
     </section>
-
     <section id="detailView" class="panel hidden">
       <div class="panel-head">
         <h1 id="charName" class="page-title"></h1>
         <span id="metaTag" class="chip"></span>
       </div>
-
       <div class="tab-list">
         <button class="tab-btn is-active" data-tab="overview">概要</button>
         <button class="tab-btn" data-tab="skills">スキル</button>
         <button class="tab-btn" data-tab="growth">育成</button>
         <button class="tab-btn" data-tab="build">ビルド</button>
       </div>
-
       <div id="tab-overview" class="tab-panel"></div>
       <div id="tab-skills" class="tab-panel hidden"></div>
       <div id="tab-growth" class="tab-panel hidden"></div>
       <div id="tab-build" class="tab-panel hidden"></div>
     </section>
   </main>
-
   <script type="module" src="./assets/js/character.js"></script>
 </body>
 </html>

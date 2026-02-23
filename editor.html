@@ -27,57 +27,42 @@
   <main class="shell-main">
     <section class="panel">
       <div class="panel-head">
-        <h1 class="page-title">キャラ追加ツール</h1>
-        <span class="muted">raw/characters.source.json 用</span>
+        <h1 class="page-title">データ追加ツール</h1>
+        <span class="muted">raw/*.source.json 生成用</span>
       </div>
-      <p class="tiny">入力 -> 追加 -> JSONコピー/ダウンロード -> リポジトリの raw/characters.source.json を更新してインポート実行。</p>
 
-      <form id="characterForm" class="form-grid">
-        <label>id（英数字推奨）
-          <input id="id" type="text" placeholder="perlica">
-        </label>
-        <label>名前
-          <input id="name" type="text" placeholder="ペリカ">
-        </label>
-        <label>レア度
-          <input id="rarity" type="number" min="1" max="6" value="5">
-        </label>
-        <label>属性
-          <input id="element" type="text" placeholder="氷">
-        </label>
-        <label>役割
-          <input id="role" type="text" placeholder="支援">
-        </label>
-        <label>武器種
-          <input id="weapon_type" type="text" placeholder="杖">
-        </label>
-        <label>説明文
-          <input id="description" type="text" placeholder="味方全体の火力支援が得意なサポート型キャラクター。">
-        </label>
-        <label>icon_url
-          <input id="icon_url" type="text" placeholder="https://example.com/icon.png">
-        </label>
-        <label>source
-          <select id="source">
-            <option value="official">official</option>
-            <option value="in_game">in_game</option>
-            <option value="community_verification">community_verification</option>
-          </select>
-        </label>
-        <label>confidence
-          <select id="confidence">
-            <option value="confirmed">confirmed</option>
-            <option value="provisional">provisional</option>
-            <option value="testing">testing</option>
-          </select>
-        </label>
-        <label>updated_at
-          <input id="updated_at" type="date">
-        </label>
-        <button class="btn-primary" type="submit">追加/上書き</button>
-      </form>
+      <div class="tab-list">
+        <button class="tab-btn is-active" data-tab="editor-characters">キャラ</button>
+        <button class="tab-btn" data-tab="editor-materials">素材</button>
+        <button class="tab-btn" data-tab="editor-skills">スキル</button>
+        <button class="tab-btn" data-tab="editor-costs">育成コスト</button>
+        <button class="tab-btn" data-tab="editor-stats">ステータス</button>
+      </div>
+
+      <div id="editor-characters" class="tab-panel">
+        <form id="characterForm" class="form-grid"></form>
+      </div>
+      <div id="editor-materials" class="tab-panel hidden">
+        <form id="materialForm" class="form-grid"></form>
+      </div>
+      <div id="editor-skills" class="tab-panel hidden">
+        <form id="skillForm" class="form-grid"></form>
+      </div>
+      <div id="editor-costs" class="tab-panel hidden">
+        <form id="costForm" class="form-grid"></form>
+      </div>
+      <div id="editor-stats" class="tab-panel hidden">
+        <form id="statsForm" class="form-grid"></form>
+      </div>
 
       <div class="editor-actions">
+        <select id="datasetSelect">
+          <option value="characters">characters.source.json</option>
+          <option value="materials">materials.source.json</option>
+          <option value="character_skills">character_skills.source.json</option>
+          <option value="upgrade_costs">upgrade_costs.source.json</option>
+          <option value="character_stats">character_stats.source.json</option>
+        </select>
         <button id="copyBtn" class="btn-ghost" type="button">JSONをコピー</button>
         <button id="downloadBtn" class="btn-ghost" type="button">JSONをダウンロード</button>
         <button id="resetBtn" class="btn-ghost" type="button">ローカル保存をリセット</button>

@@ -6,8 +6,8 @@ async function init() {
   const updates = await loadJson("./data/updates.json");
   updateList.innerHTML = updates
     .map((entry) => {
-      const items = entry.items.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
-      const scope = entry.data_scope.map((item) => `<span class="chip">${escapeHtml(item)}</span>`).join(" ");
+      const items = (entry.items || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+      const scope = (entry.data_scope || []).map((item) => `<span class="chip">${escapeHtml(item)}</span>`).join(" ");
       return `
         <article class="soft-card">
           <div class="row">

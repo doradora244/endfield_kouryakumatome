@@ -5,13 +5,11 @@
     "skill_name": "コマンドウィーブ",
     "skill_type": "Active",
     "description": "短時間、味方の攻撃力を上昇。",
-    "multiplier_data": {
-      "atk_scale": 1.2
-    },
+    "atk_scale": 1.2,
     "cooldown": 16,
     "cost": 30,
     "hit_count": 1,
-    "version": "0.1.2",
+    "version": "0.1.0",
     "source": "community_verification",
     "confidence": "provisional",
     "updated_at": "2026-02-23"
