@@ -2,6 +2,11 @@
 
 このフォルダは静的サイトです。`index.html` をそのまま公開できます。
 
+## 設計メモ
+
+- 仕様書（日本語）: `docs/END_FIELD_SPEC.md`
+- Claude向け実装メモ: `claude.md`
+
 ## 公開方法（GitHub Pages）
 
 1. GitHubで新しいリポジトリを作成（例: `endfield-guide`）
