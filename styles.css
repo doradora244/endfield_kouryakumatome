@@ -1,11 +1,11 @@
 :root {
-  --bg: #0f1318;
-  --panel: #141b24d4;
-  --line: #2f3d50;
-  --text: #edf1f7;
-  --muted: #b7c0cd;
-  --accent: #ff7f3f;
-  --accent-2: #ffd067;
+  --bg: #fff6ef;
+  --panel: #ffffffd8;
+  --line: #f2b99f;
+  --text: #432f2d;
+  --muted: #7e6560;
+  --accent: #ff986d;
+  --accent-2: #ffc17e;
 }
 
 * {
@@ -22,19 +22,19 @@ body {
   font-family: "Noto Sans JP", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at 0 0, #2a3b57 0%, transparent 45%),
-    radial-gradient(circle at 100% 20%, #443024 0%, transparent 42%),
-    var(--bg);
+    radial-gradient(circle at 8% 0, #ffd9c3 0%, transparent 42%),
+    radial-gradient(circle at 90% 10%, #ffeab6 0%, transparent 40%),
+    linear-gradient(140deg, #fff7ec, #fff2f9);
 }
 
 .bg-grid {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: 0.18;
+  opacity: 0.1;
   background-image:
-    linear-gradient(to right, #ffffff11 1px, transparent 1px),
-    linear-gradient(to bottom, #ffffff11 1px, transparent 1px);
+    linear-gradient(to right, #ffb3901a 1px, transparent 1px),
+    linear-gradient(to bottom, #ffb3901a 1px, transparent 1px);
   background-size: 34px 34px;
 }
 
@@ -54,7 +54,7 @@ body {
   margin-top: 0.8rem;
   border: 1px solid var(--line);
   border-radius: 14px;
-  background: #090d13cf;
+  background: #fffdf9d1;
   backdrop-filter: blur(6px);
   padding: 0.8rem;
   display: flex;
@@ -68,7 +68,7 @@ body {
   font: 400 1.55rem/1 "Bebas Neue", sans-serif;
   letter-spacing: 0.1em;
   text-decoration: none;
-  color: var(--text);
+  color: #5f3f3c;
 }
 
 .top-nav {
@@ -79,8 +79,9 @@ body {
 
 .top-nav a {
   text-decoration: none;
-  color: var(--muted);
-  border: 1px solid #2a3340;
+  color: #825f58;
+  border: 1px solid #efbfab;
+  background: #fff9f2;
   border-radius: 999px;
   padding: 0.35rem 0.78rem;
   font-size: 0.86rem;
@@ -88,7 +89,7 @@ body {
 
 .top-nav a.is-current,
 .top-nav a:hover {
-  color: #111;
+  color: #3f2826;
   border-color: transparent;
   background: linear-gradient(90deg, var(--accent), var(--accent-2));
 }
@@ -114,7 +115,8 @@ body {
   border: 1px solid var(--line);
   border-radius: 999px;
   padding: 0.25rem 0.6rem;
-  color: var(--muted);
+  color: #8d665f;
+  background: #fff7ef;
   font-size: 0.78rem;
   letter-spacing: 0.08em;
 }
@@ -160,8 +162,9 @@ body {
 }
 
 .btn-ghost {
-  color: var(--text);
-  background: #00000030;
+  color: #694943;
+  border-color: #efbfab;
+  background: #fff7ef;
 }
 
 .panel-head {
@@ -196,11 +199,11 @@ body {
 input,
 select {
   width: 100%;
-  border: 1px solid #3b495f;
+  border: 1px solid #efbfab;
   border-radius: 10px;
   padding: 0.52rem 0.62rem;
-  background: #0d131c;
-  color: var(--text);
+  background: #fffdfa;
+  color: #533a36;
 }
 
 .form-grid {
@@ -224,9 +227,9 @@ select {
 
 .info-card,
 .soft-card {
-  border: 1px solid #344256;
+  border: 1px solid #efbfab;
   border-radius: 12px;
-  background: #0f1520;
+  background: #fff8f1;
   padding: 0.85rem;
 }
 
@@ -256,16 +259,16 @@ select {
 .chip {
   display: inline-flex;
   border-radius: 999px;
-  border: 1px solid #41536d;
-  background: #1a2534;
-  color: #d9e6f9;
+  border: 1px solid #efbfab;
+  background: #fff4ea;
+  color: #7b554d;
   padding: 0.2rem 0.55rem;
   font-size: 0.75rem;
   white-space: nowrap;
 }
 
 .text-link {
-  color: #ffcc72;
+  color: #cb6c46;
 }
 
 .stack {
@@ -282,10 +285,10 @@ select {
 }
 
 .tab-btn {
-  border: 1px solid #364861;
+  border: 1px solid #efbfab;
   border-radius: 999px;
-  background: #111927;
-  color: var(--text);
+  background: #fff8f1;
+  color: #6c4c46;
   padding: 0.4rem 0.75rem;
   cursor: pointer;
 }
@@ -315,7 +318,7 @@ select {
 
 .data-table th,
 .data-table td {
-  border: 1px solid #324258;
+  border: 1px solid #efbfab;
   text-align: left;
   padding: 0.45rem;
   font-size: 0.9rem;
