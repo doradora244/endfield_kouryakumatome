@@ -1,0 +1,92 @@
+[
+  {
+    "id": "peri_lv1_20_alloy",
+    "character_id": "peri",
+    "upgrade_type": "level",
+    "from_level": 1,
+    "to_level": 20,
+    "material_id": "m_alloy",
+    "amount": 8,
+    "credit_cost": 1200
+  },
+  {
+    "id": "peri_lv20_40_alloy",
+    "character_id": "peri",
+    "upgrade_type": "level",
+    "from_level": 20,
+    "to_level": 40,
+    "material_id": "m_alloy",
+    "amount": 18,
+    "credit_cost": 3800
+  },
+  {
+    "id": "peri_lv40_60_chip",
+    "character_id": "peri",
+    "upgrade_type": "breakthrough",
+    "from_level": 40,
+    "to_level": 60,
+    "material_id": "m_chip_cryo",
+    "amount": 12,
+    "credit_cost": 6200
+  },
+  {
+    "id": "avv_lv1_20_alloy",
+    "character_id": "avv",
+    "upgrade_type": "level",
+    "from_level": 1,
+    "to_level": 20,
+    "material_id": "m_alloy",
+    "amount": 10,
+    "credit_cost": 1500
+  },
+  {
+    "id": "avv_lv20_40_alloy",
+    "character_id": "avv",
+    "upgrade_type": "level",
+    "from_level": 20,
+    "to_level": 40,
+    "material_id": "m_alloy",
+    "amount": 22,
+    "credit_cost": 4300
+  },
+  {
+    "id": "avv_lv40_60_core",
+    "character_id": "avv",
+    "upgrade_type": "skill",
+    "from_level": 40,
+    "to_level": 60,
+    "material_id": "m_core",
+    "amount": 9,
+    "credit_cost": 7100
+  },
+  {
+    "id": "tali_lv1_20_alloy",
+    "character_id": "tali",
+    "upgrade_type": "level",
+    "from_level": 1,
+    "to_level": 20,
+    "material_id": "m_alloy",
+    "amount": 9,
+    "credit_cost": 1300
+  },
+  {
+    "id": "tali_lv20_40_alloy",
+    "character_id": "tali",
+    "upgrade_type": "level",
+    "from_level": 20,
+    "to_level": 40,
+    "material_id": "m_alloy",
+    "amount": 17,
+    "credit_cost": 3600
+  },
+  {
+    "id": "tali_lv40_60_core",
+    "character_id": "tali",
+    "upgrade_type": "breakthrough",
+    "from_level": 40,
+    "to_level": 60,
+    "material_id": "m_core",
+    "amount": 10,
+    "credit_cost": 5900
+  }
+]

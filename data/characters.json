@@ -1,0 +1,44 @@
+[
+  {
+    "id": "peri",
+    "name": "Perlica",
+    "rarity": 5,
+    "element": "Cryo",
+    "role": "Support",
+    "weapon_type": "Staff",
+    "description": "Support-focused operator with team buff utility.",
+    "icon_url": "https://via.placeholder.com/96x96?text=Perlica",
+    "version": "0.1.0",
+    "source": "community_verification",
+    "confidence": "provisional",
+    "updated_at": "2026-02-23"
+  },
+  {
+    "id": "avv",
+    "name": "Avywenna",
+    "rarity": 5,
+    "element": "Physical",
+    "role": "DPS",
+    "weapon_type": "Blade",
+    "description": "Single-target damage dealer with burst windows.",
+    "icon_url": "https://via.placeholder.com/96x96?text=Avy",
+    "version": "0.1.0",
+    "source": "community_verification",
+    "confidence": "provisional",
+    "updated_at": "2026-02-23"
+  },
+  {
+    "id": "tali",
+    "name": "Talos",
+    "rarity": 4,
+    "element": "Thermal",
+    "role": "Breaker",
+    "weapon_type": "Hammer",
+    "description": "Frontline breaker with defense shredding effects.",
+    "icon_url": "https://via.placeholder.com/96x96?text=Talos",
+    "version": "0.1.0",
+    "source": "community_verification",
+    "confidence": "testing",
+    "updated_at": "2026-02-23"
+  }
+]

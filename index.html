@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Endfield 情報まとめ</title>
-  <meta name="description" content="Endfieldの最新情報、攻略、育成ガイドをまとめるファンサイト。">
+  <title>Endfield 攻略・育成ハブ</title>
+  <meta name="description" content="Endfieldの攻略情報、育成、計算ツールをまとめるMVPサイト。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -12,67 +12,52 @@
 </head>
 <body>
   <div class="bg-grid"></div>
-  <header class="hero">
-    <div class="hero-top">
-      <p class="badge">FAN GUIDE HUB</p>
-      <nav class="hero-nav">
-        <a href="#news">ニュース</a>
-        <a href="#guides">攻略</a>
-        <a href="#database">データ</a>
+  <header class="shell-header">
+    <div class="shell-inner">
+      <a class="logo" href="./index.html">ENDFIELD HUB</a>
+      <nav class="top-nav">
+        <a href="./characters.html">キャラ一覧</a>
+        <a href="./materials.html">素材逆引き</a>
+        <a href="./calculator.html">育成計算</a>
+        <a href="./updates.html">更新履歴</a>
       </nav>
     </div>
-    <h1>ENDFIELD</h1>
-    <p class="hero-sub">
-      Endfieldの情報・攻略を1か所に整理するためのまとめサイト。
-    </p>
   </header>
 
-  <main class="layout">
-    <section class="panel" id="news">
-      <div class="panel-head">
-        <h2>最新トピック</h2>
-        <span>更新日: <time id="updatedAt"></time></span>
-      </div>
-      <div id="topicList" class="card-grid"></div>
-    </section>
-
-    <section class="panel panel-accent" id="guides">
-      <div class="panel-head">
-        <h2>攻略クイックリンク</h2>
-      </div>
-      <div class="quick-grid">
-        <article class="quick-card">
-          <h3>初心者向け導線</h3>
-          <p>序盤でやること、戦闘の基本、素材管理の流れをまとめるページを作成予定。</p>
-        </article>
-        <article class="quick-card">
-          <h3>キャラ育成ガイド</h3>
-          <p>育成素材・強化優先度・役割別の編成ポイントを掲載予定。</p>
-        </article>
-        <article class="quick-card">
-          <h3>高難易度対策</h3>
-          <p>エンドコンテンツ想定の攻略メモ、装備・編成の検証を蓄積予定。</p>
-        </article>
+  <main class="shell-main">
+    <section class="hero">
+      <p class="badge">MVP</p>
+      <h1>ENDFIELD STRATEGY TOOLKIT</h1>
+      <p class="hero-copy">
+        情報閲覧と育成判断を優先したMVP。表示データと計算ロジックを分離し、将来のダメージ計算拡張に備えます。
+      </p>
+      <div class="cta-row">
+        <a class="btn-primary" href="./characters.html">キャラを調べる</a>
+        <a class="btn-ghost" href="./calculator.html">不足素材を計算</a>
       </div>
     </section>
 
-    <section class="panel" id="database">
-      <div class="panel-head">
-        <h2>データベース予定</h2>
+    <section class="panel">
+      <h2>現在の実装範囲</h2>
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>キャラ一覧 + 詳細</h3>
+          <p>フィルタ、検索、詳細情報、スキル、育成素材、メタ情報を確認できます。</p>
+        </article>
+        <article class="info-card">
+          <h3>素材逆引き</h3>
+          <p>素材ごとに使用キャラを確認し、育成優先順位の判断に使えます。</p>
+        </article>
+        <article class="info-card">
+          <h3>育成コスト計算</h3>
+          <p>現在レベルから目標レベルまでの必要素材と不足数を算出します。</p>
+        </article>
+        <article class="info-card">
+          <h3>更新履歴</h3>
+          <p>バージョン単位の変更内容とデータ対象を追跡できます。</p>
+        </article>
       </div>
-      <ul class="plain-list">
-        <li>キャラクター一覧</li>
-        <li>素材と入手先の早見表</li>
-        <li>イベント履歴と報酬まとめ</li>
-        <li>用語集・世界観メモ</li>
-      </ul>
     </section>
   </main>
-
-  <footer class="site-footer">
-    <p>このサイトは非公式ファンサイトです。画像・名称の権利は各権利者に帰属します。</p>
-  </footer>
-
-  <script src="./script.js"></script>
 </body>
 </html>

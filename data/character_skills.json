@@ -1,0 +1,49 @@
+[
+  {
+    "id": "peri_skill_1",
+    "character_id": "peri",
+    "skill_name": "Command Weave",
+    "skill_type": "Active",
+    "description": "Boosts party attack for a short duration.",
+    "multiplier_data": {
+      "atk_scale": 1.2,
+      "buff_pct": 0.18
+    },
+    "cooldown": 16,
+    "cost": 30,
+    "hit_count": 1,
+    "version": "0.1.0",
+    "updated_at": "2026-02-23"
+  },
+  {
+    "id": "avv_skill_1",
+    "character_id": "avv",
+    "skill_name": "Rift Lunge",
+    "skill_type": "Active",
+    "description": "Performs rapid strikes to a single target.",
+    "multiplier_data": {
+      "atk_scale": 2.6
+    },
+    "cooldown": 12,
+    "cost": 22,
+    "hit_count": 3,
+    "version": "0.1.0",
+    "updated_at": "2026-02-23"
+  },
+  {
+    "id": "tali_skill_1",
+    "character_id": "tali",
+    "skill_name": "Impact Fault",
+    "skill_type": "Active",
+    "description": "Deals area damage and applies defense reduction.",
+    "multiplier_data": {
+      "atk_scale": 1.9,
+      "def_shred_pct": 0.15
+    },
+    "cooldown": 18,
+    "cost": 28,
+    "hit_count": 2,
+    "version": "0.1.0",
+    "updated_at": "2026-02-23"
+  }
+]

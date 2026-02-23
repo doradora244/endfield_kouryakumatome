@@ -1,0 +1,68 @@
+[
+  {
+    "character_id": "peri",
+    "level": 1,
+    "hp": 720,
+    "atk": 88,
+    "def": 62,
+    "other_stats": {
+      "crit_rate": 0.05,
+      "crit_damage": 0.50
+    }
+  },
+  {
+    "character_id": "peri",
+    "level": 60,
+    "hp": 4620,
+    "atk": 482,
+    "def": 298,
+    "other_stats": {
+      "crit_rate": 0.05,
+      "crit_damage": 0.50
+    }
+  },
+  {
+    "character_id": "avv",
+    "level": 1,
+    "hp": 680,
+    "atk": 106,
+    "def": 54,
+    "other_stats": {
+      "crit_rate": 0.05,
+      "crit_damage": 0.50
+    }
+  },
+  {
+    "character_id": "avv",
+    "level": 60,
+    "hp": 4290,
+    "atk": 610,
+    "def": 274,
+    "other_stats": {
+      "crit_rate": 0.09,
+      "crit_damage": 0.64
+    }
+  },
+  {
+    "character_id": "tali",
+    "level": 1,
+    "hp": 810,
+    "atk": 81,
+    "def": 71,
+    "other_stats": {
+      "crit_rate": 0.05,
+      "crit_damage": 0.50
+    }
+  },
+  {
+    "character_id": "tali",
+    "level": 60,
+    "hp": 5250,
+    "atk": 435,
+    "def": 332,
+    "other_stats": {
+      "crit_rate": 0.05,
+      "crit_damage": 0.50
+    }
+  }
+]

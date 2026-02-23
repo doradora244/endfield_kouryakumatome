@@ -1,0 +1,26 @@
+[
+  {
+    "id": "m_alloy",
+    "name": "Refined Alloy",
+    "category": "Upgrade",
+    "icon_url": "https://via.placeholder.com/64x64?text=Alloy",
+    "source": "in_game",
+    "updated_at": "2026-02-23"
+  },
+  {
+    "id": "m_chip_cryo",
+    "name": "Cryo Control Chip",
+    "category": "Breakthrough",
+    "icon_url": "https://via.placeholder.com/64x64?text=Cryo",
+    "source": "in_game",
+    "updated_at": "2026-02-23"
+  },
+  {
+    "id": "m_core",
+    "name": "Adaptive Core",
+    "category": "Skill",
+    "icon_url": "https://via.placeholder.com/64x64?text=Core",
+    "source": "in_game",
+    "updated_at": "2026-02-23"
+  }
+]

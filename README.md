@@ -2,6 +2,24 @@
 
 このフォルダは静的サイトです。`index.html` をそのまま公開できます。
 
+## MVPページ
+
+- `index.html` : トップ
+- `characters.html` : キャラ一覧（検索・フィルタ）
+- `character.html?id=<character_id>` : キャラ詳細
+- `materials.html` : 素材一覧 + 逆引き
+- `calculator.html` : 育成コスト計算（簡易）
+- `updates.html` : 更新履歴
+
+## データファイル
+
+- `data/characters.json`
+- `data/character_stats.json`
+- `data/character_skills.json`
+- `data/materials.json`
+- `data/upgrade_costs.json`
+- `data/updates.json`
+
 ## 設計メモ
 
 - 仕様書（日本語）: `docs/END_FIELD_SPEC.md`

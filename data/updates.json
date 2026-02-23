@@ -1,0 +1,22 @@
+[
+  {
+    "id": "v0_1_0",
+    "version": "0.1.0",
+    "date": "2026-02-23",
+    "summary": "MVP base data and pages published.",
+    "items": [
+      "Added character list with filters and search.",
+      "Added character detail page with skills and growth info.",
+      "Added material reverse lookup page.",
+      "Added simple growth cost calculator.",
+      "Added update history page and metadata policy."
+    ],
+    "data_scope": [
+      "characters",
+      "character_stats",
+      "character_skills",
+      "materials",
+      "upgrade_costs"
+    ]
+  }
+]
