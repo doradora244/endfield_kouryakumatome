@@ -1,12 +1,12 @@
 [
   {
     "id": "perlica",
-    "name": "Perlica",
+    "name": "ペリカ",
     "rarity": 5,
-    "element": "Cryo",
-    "role": "Support",
-    "weapon_type": "Staff",
-    "description": "Support-focused operator with team buff utility.",
+    "element": "氷",
+    "role": "支援",
+    "weapon_type": "杖",
+    "description": "味方全体の火力支援が得意なサポート型キャラクター。",
     "icon_url": "https://example.com/icons/perlica.png",
     "source": "official",
     "confidence": "confirmed",
