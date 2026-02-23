@@ -9,6 +9,7 @@
 - `character.html?id=<character_id>` : キャラ詳細
 - `materials.html` : 素材一覧 + 逆引き
 - `calculator.html` : 育成コスト計算（簡易）
+- `editor.html` : キャラ追加ツール（JSON生成）
 - `updates.html` : 更新履歴
 
 ## データファイル
@@ -39,6 +40,13 @@ node scripts/import_materials_from_raw.js
 ```
 
 4. 生成された `data/*.json` を確認してコミット
+
+## ブラウザでキャラ追加する方法
+
+1. `editor.html` を開く
+2. フォームにキャラ情報を入力して `追加/上書き`
+3. `JSONをコピー` か `JSONをダウンロード` を実行
+4. `raw/characters.source.json` を更新してインポート実行
 
 ## 設計メモ
 

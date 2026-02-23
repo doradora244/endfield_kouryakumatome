@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>データ追加 | Endfield</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <header class="shell-header">
+    <div class="shell-inner">
+      <a class="logo" href="./index.html">ENDFIELD HUB</a>
+      <nav class="top-nav">
+        <a href="./characters.html">キャラ一覧</a>
+        <a href="./materials.html">素材逆引き</a>
+        <a href="./calculator.html">育成計算</a>
+        <a class="is-current" href="./editor.html">データ追加</a>
+        <a href="./updates.html">更新履歴</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell-main">
+    <section class="panel">
+      <div class="panel-head">
+        <h1 class="page-title">キャラ追加ツール</h1>
+        <span class="muted">raw/characters.source.json 用</span>
+      </div>
+      <p class="tiny">入力 -> 追加 -> JSONコピー/ダウンロード -> リポジトリの raw/characters.source.json を更新してインポート実行。</p>
+
+      <form id="characterForm" class="form-grid">
+        <label>id（英数字推奨）
+          <input id="id" type="text" placeholder="perlica">
+        </label>
+        <label>名前
+          <input id="name" type="text" placeholder="ペリカ">
+        </label>
+        <label>レア度
+          <input id="rarity" type="number" min="1" max="6" value="5">
+        </label>
+        <label>属性
+          <input id="element" type="text" placeholder="氷">
+        </label>
+        <label>役割
+          <input id="role" type="text" placeholder="支援">
+        </label>
+        <label>武器種
+          <input id="weapon_type" type="text" placeholder="杖">
+        </label>
+        <label>説明文
+          <input id="description" type="text" placeholder="味方全体の火力支援が得意なサポート型キャラクター。">
+        </label>
+        <label>icon_url
+          <input id="icon_url" type="text" placeholder="https://example.com/icon.png">
+        </label>
+        <label>source
+          <select id="source">
+            <option value="official">official</option>
+            <option value="in_game">in_game</option>
+            <option value="community_verification">community_verification</option>
+          </select>
+        </label>
+        <label>confidence
+          <select id="confidence">
+            <option value="confirmed">confirmed</option>
+            <option value="provisional">provisional</option>
+            <option value="testing">testing</option>
+          </select>
+        </label>
+        <label>updated_at
+          <input id="updated_at" type="date">
+        </label>
+        <button class="btn-primary" type="submit">追加/上書き</button>
+      </form>
+
+      <div class="editor-actions">
+        <button id="copyBtn" class="btn-ghost" type="button">JSONをコピー</button>
+        <button id="downloadBtn" class="btn-ghost" type="button">JSONをダウンロード</button>
+        <button id="resetBtn" class="btn-ghost" type="button">ローカル保存をリセット</button>
+      </div>
+
+      <p id="editorStatus" class="tiny"></p>
+      <textarea id="jsonOutput" rows="18"></textarea>
+    </section>
+  </main>
+
+  <script type="module" src="./assets/js/editor.js"></script>
+</body>
+</html>

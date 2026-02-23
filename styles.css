@@ -328,6 +328,25 @@ select {
   display: none;
 }
 
+.editor-actions {
+  margin-top: 0.8rem;
+  display: flex;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+textarea {
+  width: 100%;
+  margin-top: 0.6rem;
+  border: 1px solid #efbfab;
+  border-radius: 10px;
+  padding: 0.62rem;
+  background: #fffdfa;
+  color: #533a36;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  line-height: 1.45;
+}
+
 @media (max-width: 620px) {
   .shell-header,
   .shell-main {
