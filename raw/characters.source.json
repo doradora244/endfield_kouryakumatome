@@ -7,7 +7,7 @@
     "role": "前衛",
     "weapon_type": "片手剣",
     "description": "プレイヤーが操作する主人公。物理属性の前衛アタッカー。エンドフィールド工業所属。",
-    "icon_url": "",
+    "icon_url": "https://appmedia.jp/wp-content/uploads/2026/01/124820_zinuo.webp",
     "source": "wiki_gamewith",
     "confidence": "confirmed",
     "updated_at": "2026-02-25"
@@ -20,7 +20,7 @@
     "role": "補助",
     "weapon_type": "アーツユニット",
     "description": "自然属性の補助オペレーター。チーム全体のサポートに長けるロドス・アイランド所属の★6。",
-    "icon_url": "",
+    "icon_url": "https://appmedia.jp/wp-content/uploads/2026/01/124821_y3hpm.webp",
     "source": "wiki_gamewith",
     "confidence": "confirmed",
     "updated_at": "2026-02-25"
@@ -33,7 +33,7 @@
     "role": "先鋒",
     "weapon_type": "片手剣",
     "description": "物理属性の先鋒オペレーター。ロドス・アイランド所属の★6。前線を切り開く突破力が特徴。",
-    "icon_url": "",
+    "icon_url": "https://appmedia.jp/wp-content/uploads/2026/01/125258_4wr38.webp",
     "source": "wiki_gamewith",
     "confidence": "confirmed",
     "updated_at": "2026-02-25"
@@ -46,7 +46,7 @@
     "role": "突撃",
     "weapon_type": "大剣",
     "description": "寒冷属性の突撃アタッカー。セシュカ所属の★6。大剣で敵に高ダメージを与える。",
-    "icon_url": "",
+    "icon_url": "https://appmedia.jp/wp-content/uploads/2026/01/124824_qtb26.webp",
     "source": "wiki_gamewith",
     "confidence": "confirmed",
     "updated_at": "2026-02-25"
@@ -59,7 +59,7 @@
     "role": "重装",
     "weapon_type": "大剣",
     "description": "灼熱属性の重装オペレーター。鉄誓軍所属の★6タンク。大剣を使用した高耐久の前衛。",
-    "icon_url": "",
+    "icon_url": "https://appmedia.jp/wp-content/uploads/2026/01/124825_fwd9b.webp",
     "source": "wiki_gamewith",
     "confidence": "confirmed",
     "updated_at": "2026-02-25"
@@ -72,7 +72,7 @@
     "role": "前衛",
     "weapon_type": "長柄武器",
     "description": "物理属性の前衛アタッカー。宏山科学院所属の★6。長柄武器でリーチを活かした戦闘が得意。",
-    "icon_url": "",
+    "icon_url": "https://appmedia.jp/wp-content/uploads/2026/01/124824_h0tgo.webp",
     "source": "wiki_gamewith",
     "confidence": "confirmed",
     "updated_at": "2026-02-25"
@@ -85,7 +85,7 @@
     "role": "補助",
     "weapon_type": "アーツユニット",
     "description": "自然属性の補助オペレーター。ロドス・アイランド所属の★6。チームの回復・支援を担う。",
-    "icon_url": "",
+    "icon_url": "https://appmedia.jp/wp-content/uploads/2026/01/124822_u629y.webp",
     "source": "wiki_gamewith",
     "confidence": "confirmed",
     "updated_at": "2026-02-25"
@@ -98,7 +98,7 @@
     "role": "突撃",
     "weapon_type": "片手剣",
     "description": "灼熱属性の突撃アタッカー。ロドス・アイランド所属の★6。高い火力と突撃性能を誇る。",
-    "icon_url": "",
+    "icon_url": "https://appmedia.jp/wp-content/uploads/2026/01/124825_85cf9.webp",
     "source": "wiki_gamewith",
     "confidence": "confirmed",
     "updated_at": "2026-02-25"
@@ -111,7 +111,7 @@
     "role": "突撃",
     "weapon_type": "拳銃",
     "description": "寒冷属性の突撃アタッカー。エンドフィールド工業所属の★6。拳銃を使った遠近両用の戦い方が特徴。",
-    "icon_url": "",
+    "icon_url": "https://appmedia.jp/wp-content/uploads/2026/02/150111_07ohi.webp",
     "source": "wiki_gamewith",
     "confidence": "confirmed",
     "updated_at": "2026-02-25"
@@ -124,7 +124,7 @@
     "role": "術師",
     "weapon_type": "不明",
     "description": "電磁属性の術師オペレーター。遠距離からの電磁攻撃と支援が得意な★5。",
-    "icon_url": "",
+    "icon_url": "https://appmedia.jp/wp-content/uploads/2026/01/124824_hui7z.webp",
     "source": "wiki_gamewith",
     "confidence": "provisional",
     "updated_at": "2026-02-25"
@@ -137,7 +137,7 @@
     "role": "前衛",
     "weapon_type": "片手剣",
     "description": "物理属性の前衛アタッカー。片手剣による近接戦闘を得意とする★5。",
-    "icon_url": "",
+    "icon_url": "https://appmedia.jp/wp-content/uploads/2026/01/124823_02tnd.webp",
     "source": "wiki_gamewith",
     "confidence": "confirmed",
     "updated_at": "2026-02-25"
@@ -150,7 +150,7 @@
     "role": "補助",
     "weapon_type": "不明",
     "description": "寒冷属性の補助オペレーター。チームの支援を行う★5。",
-    "icon_url": "",
+    "icon_url": "https://appmedia.jp/wp-content/uploads/2026/01/124822_5v0md.webp",
     "source": "wiki_gamewith",
     "confidence": "provisional",
     "updated_at": "2026-02-25"
@@ -163,7 +163,7 @@
     "role": "術師",
     "weapon_type": "拳銃",
     "description": "灼熱属性の術師オペレーター。拳銃を使った攻撃的な術師の★5。高火力の遠距離攻撃が強み。",
-    "icon_url": "",
+    "icon_url": "https://appmedia.jp/wp-content/uploads/2026/01/124824_3qd40.webp",
     "source": "wiki_gamewith",
     "confidence": "confirmed",
     "updated_at": "2026-02-25"
@@ -176,7 +176,7 @@
     "role": "突撃",
     "weapon_type": "大剣",
     "description": "物理属性の突撃アタッカー。大剣を使ったパワーファイターの★5。",
-    "icon_url": "",
+    "icon_url": "https://appmedia.jp/wp-content/uploads/2026/01/124822_y8qib.webp",
     "source": "wiki_gamewith",
     "confidence": "confirmed",
     "updated_at": "2026-02-25"
@@ -189,7 +189,7 @@
     "role": "突撃",
     "weapon_type": "不明",
     "description": "電磁属性の突撃アタッカー。高機動な立ち回りが特徴の★5。",
-    "icon_url": "",
+    "icon_url": "https://appmedia.jp/wp-content/uploads/2026/01/124821_2pue5.webp",
     "source": "wiki_gamewith",
     "confidence": "provisional",
     "updated_at": "2026-02-25"
@@ -202,7 +202,7 @@
     "role": "先鋒",
     "weapon_type": "不明",
     "description": "寒冷属性の先鋒オペレーター。前線を支えるサポート型先鋒の★5。",
-    "icon_url": "",
+    "icon_url": "https://appmedia.jp/wp-content/uploads/2026/01/124822_dwqex.webp",
     "source": "wiki_gamewith",
     "confidence": "provisional",
     "updated_at": "2026-02-25"
@@ -215,7 +215,7 @@
     "role": "先鋒",
     "weapon_type": "不明",
     "description": "電磁属性の先鋒オペレーター。前線を担う★5の先鋒。",
-    "icon_url": "",
+    "icon_url": "https://appmedia.jp/wp-content/uploads/2026/01/124821_cykh8.webp",
     "source": "wiki_gamewith",
     "confidence": "provisional",
     "updated_at": "2026-02-25"
@@ -228,7 +228,7 @@
     "role": "重装",
     "weapon_type": "不明",
     "description": "寒冷属性の重装オペレーター。防御を担う★5タンク。",
-    "icon_url": "",
+    "icon_url": "https://appmedia.jp/wp-content/uploads/2026/01/124822_avo0n.webp",
     "source": "wiki_gamewith",
     "confidence": "provisional",
     "updated_at": "2026-02-25"
@@ -241,7 +241,7 @@
     "role": "前衛",
     "weapon_type": "不明",
     "description": "寒冷属性の前衛オペレーター。★4の近接DPS。",
-    "icon_url": "",
+    "icon_url": "https://appmedia.jp/wp-content/uploads/2026/01/124824_r9g4v.webp",
     "source": "wiki_gamewith",
     "confidence": "provisional",
     "updated_at": "2026-02-25"
@@ -254,7 +254,7 @@
     "role": "重装",
     "weapon_type": "不明",
     "description": "物理属性の重装オペレーター。★4の防御型タンク。",
-    "icon_url": "",
+    "icon_url": "https://appmedia.jp/wp-content/uploads/2026/01/124821_0v8xm.webp",
     "source": "wiki_gamewith",
     "confidence": "provisional",
     "updated_at": "2026-02-25"
@@ -267,7 +267,7 @@
     "role": "補助",
     "weapon_type": "不明",
     "description": "電磁属性の補助オペレーター。★4のサポート役。",
-    "icon_url": "",
+    "icon_url": "https://appmedia.jp/wp-content/uploads/2026/01/124823_shrt3.webp",
     "source": "wiki_gamewith",
     "confidence": "provisional",
     "updated_at": "2026-02-25"
@@ -280,7 +280,7 @@
     "role": "術師",
     "weapon_type": "不明",
     "description": "自然属性の術師オペレーター。★4の遠距離攻撃型。",
-    "icon_url": "",
+    "icon_url": "https://appmedia.jp/wp-content/uploads/2026/01/124823_s1wu0.webp",
     "source": "wiki_gamewith",
     "confidence": "provisional",
     "updated_at": "2026-02-25"
@@ -293,7 +293,7 @@
     "role": "先鋒",
     "weapon_type": "不明",
     "description": "灼熱属性の先鋒オペレーター。★4の前線支援役。",
-    "icon_url": "",
+    "icon_url": "https://appmedia.jp/wp-content/uploads/2026/01/124821_cmg1n.webp",
     "source": "wiki_gamewith",
     "confidence": "provisional",
     "updated_at": "2026-02-25"
