@@ -5,6 +5,7 @@ const rarityFilter = document.getElementById("rarityFilter");
 const elementFilter = document.getElementById("elementFilter");
 const roleFilter = document.getElementById("roleFilter");
 const weaponFilter = document.getElementById("weaponFilter");
+const sortOrder = document.getElementById("sortOrder");
 const characterGrid = document.getElementById("characterGrid");
 const characterCount = document.getElementById("characterCount");
 
@@ -43,6 +44,14 @@ function fillSelect(select, values) {
   });
 }
 
+function sortCharacters(characters, key) {
+  return [...characters].sort((a, b) => {
+    if (key === "rarity_asc") return a.rarity - b.rarity;
+    if (key === "name") return a.name.localeCompare(b.name, "ja");
+    return b.rarity - a.rarity; // rarity_desc default
+  });
+}
+
 function renderCards(characters) {
   characterCount.textContent = `${characters.length}件`;
   characterGrid.innerHTML = characters
@@ -56,14 +65,14 @@ function renderCards(characters) {
           : "";
       return `
         <article
-          class="info-card char-card"
+          class="info-card char-card rarity-${character.rarity}"
           data-element="${escapeHtml(character.element)}"
           onclick="location.href='./character.html?id=${encodeURIComponent(character.id)}'"
         >
           <div class="char-card-top">
             ${iconHtml(character)}
             <div class="char-card-meta">
-              <div class="char-stars">${stars}</div>
+              <div class="char-stars rarity-stars-${character.rarity}">${stars}</div>
               <h3>${escapeHtml(character.name)}</h3>
             </div>
           </div>
@@ -94,7 +103,7 @@ function applyFilter(all) {
     return true;
   });
 
-  renderCards(filtered);
+  renderCards(sortCharacters(filtered, sortOrder.value));
 }
 
 async function init() {
@@ -103,9 +112,9 @@ async function init() {
   fillSelect(elementFilter, uniqueValues(characters, "element"));
   fillSelect(roleFilter, uniqueValues(characters, "role"));
   fillSelect(weaponFilter, uniqueValues(characters, "weapon_type"));
-  renderCards(characters);
+  applyFilter(characters);
 
-  [searchInput, rarityFilter, elementFilter, roleFilter, weaponFilter].forEach((node) => {
+  [searchInput, rarityFilter, elementFilter, roleFilter, weaponFilter, sortOrder].forEach((node) => {
     node.addEventListener("input", () => applyFilter(characters));
     node.addEventListener("change", () => applyFilter(characters));
   });

@@ -570,9 +570,26 @@ textarea {
 .cat-exp    { background: #e8f0ff; color: #1040bf; border-color: #90b0f0; }
 .cat-credit { background: #fffce6; color: #7a5c00; border-color: #ffd060; }
 
+/* ===== レア度別の星色 ===== */
+.rarity-stars-6 { color: #e05010; }
+.rarity-stars-5 { color: #d08000; }
+.rarity-stars-4 { color: #909090; }
+
 /* ===== キャラ詳細ページ ===== */
-.char-detail-chips { margin-bottom: 0.7rem; }
+.char-detail-top { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 0.8rem; }
+.char-detail-icon {
+  width: 80px; height: 80px; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; font-weight: 700; flex-shrink: 0; border: 2px solid;
+}
+.char-detail-icon img { width: 100%; height: 100%; object-fit: cover; border-radius: inherit; }
+.char-detail-info { flex: 1; min-width: 0; }
+.char-detail-chips { margin-bottom: 0.5rem; }
 .char-detail-desc { margin: 0 0 0.5rem; line-height: 1.6; }
 .char-meta-line { color: var(--muted); font-size: 0.8rem; margin: 0 0 0.8rem; }
 .back-link { display: inline-flex; align-items: center; gap: 0.3rem; margin-bottom: 0.8rem; font-size: 0.88rem; text-decoration: none; color: #825f58; }
 .back-link:hover { color: var(--accent); }
+@media (max-width: 480px) {
+  .char-detail-top { flex-direction: column; }
+  .char-detail-icon { width: 64px; height: 64px; }
+}

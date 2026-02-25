@@ -1,6 +1,7 @@
 import { escapeHtml, loadJson } from "./common.js";
 
 const materialSearch = document.getElementById("materialSearch");
+const categoryFilter = document.getElementById("categoryFilter");
 const materialList = document.getElementById("materialList");
 
 const CATEGORY_CLASS = {
@@ -11,10 +12,12 @@ const CATEGORY_CLASS = {
   "通貨": "cat-credit"
 };
 
-function render(materials, usageMap, keyword = "") {
+function render(materials, usageMap, keyword = "", category = "") {
   const q = keyword.trim().toLowerCase();
   const filtered = materials.filter(
-    (m) => m.name.toLowerCase().includes(q) || m.category.toLowerCase().includes(q)
+    (m) =>
+      (m.name.toLowerCase().includes(q) || m.category.toLowerCase().includes(q)) &&
+      (!category || m.category === category)
   );
 
   if (!filtered.length) {
@@ -75,9 +78,14 @@ async function init() {
   });
 
   render(materials, usageMap);
-  materialSearch.addEventListener("input", () =>
-    render(materials, usageMap, materialSearch.value)
-  );
+  [materialSearch, categoryFilter].forEach((el) => {
+    el.addEventListener("input", () =>
+      render(materials, usageMap, materialSearch.value, categoryFilter.value)
+    );
+    el.addEventListener("change", () =>
+      render(materials, usageMap, materialSearch.value, categoryFilter.value)
+    );
+  });
 }
 
 init().catch((error) => {

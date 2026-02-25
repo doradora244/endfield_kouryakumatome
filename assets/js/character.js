@@ -309,20 +309,28 @@ async function init() {
     character.weapon_type && character.weapon_type !== "不明"
       ? `<span class="chip">${escapeHtml(character.weapon_type)}</span>`
       : "";
+  const iconHtml = character.icon_url
+    ? `<div class="char-detail-icon ${ec}"><img src="${escapeHtml(character.icon_url)}" alt="${escapeHtml(character.name)}" loading="lazy"></div>`
+    : `<div class="char-detail-icon ${ec}">${escapeHtml(character.name.slice(0, 2))}</div>`;
 
   tabOverview.innerHTML = `
-    <div class="char-detail-chips chip-row">
-      <span class="chip ${ec}">${escapeHtml(character.element)}</span>
-      <span class="chip ${rc}">${escapeHtml(character.role)}</span>
-      ${weaponChip}
-      <span class="chip char-stars">${stars}</span>
+    <div class="char-detail-top">
+      ${iconHtml}
+      <div class="char-detail-info">
+        <div class="char-detail-chips chip-row">
+          <span class="chip ${ec}">${escapeHtml(character.element)}</span>
+          <span class="chip ${rc}">${escapeHtml(character.role)}</span>
+          ${weaponChip}
+          <span class="chip char-stars rarity-stars-${character.rarity}">${stars}</span>
+        </div>
+        <p class="char-detail-desc">${escapeHtml(toLabel(character.description))}</p>
+        <p class="char-meta-line">
+          更新: ${escapeHtml(character.updated_at)}
+          &nbsp;·&nbsp; ソース: ${escapeHtml(character.source)}
+          &nbsp;·&nbsp; 確度: ${escapeHtml(character.confidence)}
+        </p>
+      </div>
     </div>
-    <p class="char-detail-desc">${escapeHtml(toLabel(character.description))}</p>
-    <p class="char-meta-line">
-      更新: ${escapeHtml(character.updated_at)}
-      &nbsp;·&nbsp; ソース: ${escapeHtml(character.source)}
-      &nbsp;·&nbsp; 確度: ${escapeHtml(character.confidence)}
-    </p>
     <h3 style="margin:0 0 0.3rem">ステータス</h3>
     ${renderStatsTable(myStats)}
   `;
