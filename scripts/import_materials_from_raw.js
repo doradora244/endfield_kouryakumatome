@@ -30,7 +30,11 @@ function normalizeMaterial(input, today) {
     name: String(input.name || "").trim(),
     category: String(input.category || "General").trim(),
     icon_url: String(input.icon_url || "").trim(),
+    acquisition_methods: Array.isArray(input.acquisition_methods) ? input.acquisition_methods : [],
+    drop_locations: Array.isArray(input.drop_locations) ? input.drop_locations : [],
+    note: String(input.note || "").trim(),
     source: String(input.source || "in_game").trim(),
+    confidence: String(input.confidence || "confirmed").trim(),
     updated_at: String(input.updated_at || today).trim()
   };
 }

@@ -1,10 +1,222 @@
 [
   {
-    "id": "refined_alloy",
-    "name": "精製合金",
-    "category": "育成",
-    "icon_url": "https://example.com/icons/refined_alloy.png",
-    "source": "in_game",
-    "updated_at": "2026-02-23"
+    "id": "sakusen_kiroku",
+    "name": "作戦記録",
+    "category": "経験値",
+    "icon_url": "",
+    "acquisition_methods": [
+      "協約空間「人材育成」周回",
+      "クエスト報酬",
+      "通行証報酬",
+      "イベント報酬"
+    ],
+    "drop_locations": [
+      { "area": "協約空間", "stage": "人材育成（経験値ステージ）", "note": "理性消費で周回可" }
+    ],
+    "note": "Lv1〜60のレベルアップに使用。初級・中級・上級の3種あり。",
+    "source": "wiki_gamewith",
+    "updated_at": "2026-02-25"
+  },
+  {
+    "id": "ninshiki_baitai",
+    "name": "認識媒体",
+    "category": "経験値",
+    "icon_url": "",
+    "acquisition_methods": [
+      "協約空間「人材育成」周回",
+      "フィールド探索"
+    ],
+    "drop_locations": [
+      { "area": "協約空間", "stage": "人材育成（経験値ステージ）", "note": "高難易度ステージで入手" }
+    ],
+    "note": "Lv61以上のレベルアップに使用。作戦記録より高EXP効率。",
+    "source": "wiki_gamewith",
+    "updated_at": "2026-02-25"
+  },
+  {
+    "id": "yakusoku_disk",
+    "name": "協約ディスク",
+    "category": "昇進",
+    "icon_url": "",
+    "acquisition_methods": [
+      "協約空間「昇進素材」周回",
+      "通行証報酬",
+      "イベント報酬",
+      "購買部（集成配給交換）"
+    ],
+    "drop_locations": [
+      { "area": "協約空間", "stage": "昇進素材ステージ", "note": "理性消費で周回可" }
+    ],
+    "note": "E1・E2昇進に使用。E3以降は協約プロセットが必要。",
+    "source": "wiki_pocketgamer",
+    "updated_at": "2026-02-25"
+  },
+  {
+    "id": "yakusoku_proset",
+    "name": "協約プロセット",
+    "category": "昇進",
+    "icon_url": "",
+    "acquisition_methods": [
+      "協約空間「昇進素材」周回",
+      "購買部（集成配給交換）"
+    ],
+    "drop_locations": [
+      { "area": "協約空間", "stage": "昇進素材ステージ（高難易度）", "note": "協約ディスクより入手しづらい" }
+    ],
+    "note": "E3・E4昇進に使用。協約ディスクの上位版。（日本語名暫定）",
+    "source": "wiki_pocketgamer",
+    "confidence": "provisional",
+    "updated_at": "2026-02-25"
+  },
+  {
+    "id": "usukurenai_take",
+    "name": "薄紅茸",
+    "category": "採集素材",
+    "icon_url": "",
+    "acquisition_methods": [
+      "フィールド採集（序盤エリア・希少採集物）",
+      "帝江号培養室で生産"
+    ],
+    "drop_locations": [
+      { "area": "序盤フィールド", "stage": "希少採集物スポット", "note": "約3日でリポップ" }
+    ],
+    "note": "E1昇進に使用。ピンク色のキノコ。帝江号培養室での毎日生産を推奨。",
+    "source": "wiki_gamewith",
+    "updated_at": "2026-02-25"
+  },
+  {
+    "id": "akamomi_take",
+    "name": "赤紅茸",
+    "category": "採集素材",
+    "icon_url": "",
+    "acquisition_methods": [
+      "フィールド採集（原初湧泉エリア付近・希少採集物）",
+      "帝江号培養室で生産"
+    ],
+    "drop_locations": [
+      { "area": "原初湧泉（Origin Lodespring）", "stage": "希少採集物スポット", "note": "第2章以降で解放、約3日でリポップ" }
+    ],
+    "note": "E2昇進に使用。赤いキノコ。薄紅茸より入手エリアが限られる。（日本語名暫定）",
+    "source": "wiki_pocketgamer",
+    "confidence": "provisional",
+    "updated_at": "2026-02-25"
+  },
+  {
+    "id": "ruby_take",
+    "name": "紅玉茸",
+    "category": "採集素材",
+    "icon_url": "",
+    "acquisition_methods": [
+      "フィールド採集（景輿渓谷エリア・希少採集物）",
+      "帝江号培養室で生産"
+    ],
+    "drop_locations": [
+      { "area": "景輿渓谷（Jingyu Valley）", "stage": "希少採集物スポット", "note": "中盤以降で解放、約3日でリポップ" }
+    ],
+    "note": "E3昇進に使用。ルビー色のキノコ。（日本語名暫定）",
+    "source": "wiki_pocketgamer",
+    "confidence": "provisional",
+    "updated_at": "2026-02-25"
+  },
+  {
+    "id": "chi_take",
+    "name": "血紅茸",
+    "category": "採集素材",
+    "icon_url": "",
+    "acquisition_methods": [
+      "フィールド採集（後半エリア・希少採集物）",
+      "帝江号培養室で生産"
+    ],
+    "drop_locations": [
+      { "area": "後半フィールド", "stage": "希少採集物スポット", "note": "後半エリア解放後、約3日でリポップ" }
+    ],
+    "note": "E4昇進に使用。最高ランクのキノコ系素材。（日本語名暫定）",
+    "source": "wiki_pocketgamer",
+    "confidence": "provisional",
+    "updated_at": "2026-02-25"
+  },
+  {
+    "id": "yakusoku_kakuchu",
+    "name": "協約角柱",
+    "category": "スキル強化",
+    "icon_url": "",
+    "acquisition_methods": [
+      "協約空間「スキル強化」周回",
+      "購買部（集成配給交換）"
+    ],
+    "drop_locations": [
+      { "area": "協約空間", "stage": "スキル強化ステージ", "note": "理性消費で周回可" }
+    ],
+    "note": "スキルRank1〜6の強化に使用。素質・配属スキル強化にも使うため過剰消費に注意。",
+    "source": "wiki_gamewith",
+    "updated_at": "2026-02-25"
+  },
+  {
+    "id": "yakusoku_kakuchu_set",
+    "name": "協約角柱セット",
+    "category": "スキル強化",
+    "icon_url": "",
+    "acquisition_methods": [
+      "協約空間「スキル強化」周回（高難易度）",
+      "購買部（集成配給交換）"
+    ],
+    "drop_locations": [
+      { "area": "協約空間", "stage": "スキル強化ステージ（高難易度）", "note": "協約角柱より入手が難しい" }
+    ],
+    "note": "スキルRank7以上の強化に使用。協約角柱の上位版。",
+    "source": "wiki_gamewith",
+    "updated_at": "2026-02-25"
+  },
+  {
+    "id": "kessho_eiyou",
+    "name": "結晶鋭葉",
+    "category": "スキル強化",
+    "icon_url": "",
+    "acquisition_methods": [
+      "フィールド採集（希少採集物エリア）",
+      "帝江号培養室で生産",
+      "中枢エリア"
+    ],
+    "drop_locations": [
+      { "area": "フィールド各所", "stage": "希少採集物スポット", "note": "序〜中盤エリアで採集可能" }
+    ],
+    "note": "スキル強化（初期段階）に使用。フィールドの希少採集物として入手。",
+    "source": "wiki_gamewith",
+    "updated_at": "2026-02-25"
+  },
+  {
+    "id": "junsho_eiyou",
+    "name": "純晶鋭葉",
+    "category": "スキル強化",
+    "icon_url": "",
+    "acquisition_methods": [
+      "フィールド採集（希少採集物エリア・中盤以降）",
+      "帝江号培養室で生産"
+    ],
+    "drop_locations": [
+      { "area": "フィールド各所（中盤以降）", "stage": "希少採集物スポット", "note": "結晶鋭葉より入手しづらい" }
+    ],
+    "note": "スキル強化（高ランク）に使用。結晶鋭葉の上位版。",
+    "source": "wiki_gamewith",
+    "updated_at": "2026-02-25"
+  },
+  {
+    "id": "ori_kin_ken",
+    "name": "折金券",
+    "category": "通貨",
+    "icon_url": "",
+    "acquisition_methods": [
+      "協約空間「通貨」周回",
+      "購買部（集成配給交換）",
+      "クエスト報酬",
+      "デイリー報酬",
+      "イベント報酬"
+    ],
+    "drop_locations": [
+      { "area": "協約空間", "stage": "通貨ステージ", "note": "毎日周回を推奨" }
+    ],
+    "note": "昇進・スキル強化・各種強化の汎用通貨（T-Creds）。",
+    "source": "wiki_gamewith",
+    "updated_at": "2026-02-25"
   }
 ]

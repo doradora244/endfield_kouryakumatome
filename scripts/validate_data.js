@@ -45,7 +45,7 @@ function main() {
   });
 
   costs.forEach((cost) => {
-    if (!characterIds.has(cost.character_id)) {
+    if (cost.character_id !== "*" && !characterIds.has(cost.character_id)) {
       errors.push(`upgrade_costs: unknown character_id=${cost.character_id} (id=${cost.id})`);
     }
     if (!materialIds.has(cost.material_id)) {

@@ -9,6 +9,17 @@ const tabSkills = document.getElementById("tab-skills");
 const tabGrowth = document.getElementById("tab-growth");
 const tabBuild = document.getElementById("tab-build");
 
+// E0〜E4: 昇進を行うときの from_level（昇進コストのキー）
+const ASCENSION_FROM_LEVELS = [20, 40, 60, 80];
+
+const ASCENSION_STAGES = [
+  { value: 0, label: "E0（Lv上限 20）" },
+  { value: 1, label: "E1（Lv上限 40）" },
+  { value: 2, label: "E2（Lv上限 60）" },
+  { value: 3, label: "E3（Lv上限 80）" },
+  { value: 4, label: "E4（Lv上限 90）" }
+];
+
 function queryId() {
   return new URLSearchParams(location.search).get("id");
 }
@@ -54,26 +65,107 @@ function renderStatsTable(rows) {
   `;
 }
 
-function renderCostTable(rows) {
-  if (!rows.length) return `<p class="muted">データなし</p>`;
-  const body = rows
-    .map(
-      (row) => `
-      <tr>
-        <td>${row.from_level}-${row.to_level}</td>
-        <td>${escapeHtml(row.material_name)}</td>
-        <td>${row.amount}</td>
-        <td>${row.credit_cost}</td>
-      </tr>
-    `
-    )
+function calcGrowthMaterials(myCosts, fromStage, toStage) {
+  if (fromStage >= toStage) return null;
+
+  const neededLevels = new Set();
+  for (let s = fromStage; s < toStage; s++) {
+    neededLevels.add(ASCENSION_FROM_LEVELS[s]);
+  }
+
+  const relevant = myCosts.filter(
+    (c) => c.upgrade_type === "ascension" && neededLevels.has(c.from_level)
+  );
+  if (!relevant.length) return null;
+
+  const totals = new Map();
+  let totalCredits = 0;
+  relevant.forEach((c) => {
+    if (c.material_id) {
+      totals.set(c.material_id, (totals.get(c.material_id) || 0) + c.amount);
+    }
+    if (c.credit_cost) totalCredits += c.credit_cost;
+  });
+
+  return { totals, totalCredits };
+}
+
+function renderGrowthResult(result, materialDetailsMap) {
+  if (!result) return `<p class="muted">このキャラの昇進コストデータはまだありません。</p>`;
+
+  const { totals, totalCredits } = result;
+  const rows = [];
+
+  totals.forEach((amount, matId) => {
+    const mat = materialDetailsMap.get(matId);
+    const name = mat ? mat.name : matId;
+    const methods =
+      mat && mat.acquisition_methods && mat.acquisition_methods.length
+        ? mat.acquisition_methods.join(" · ")
+        : "—";
+    const isProvisional = mat && mat.confidence === "provisional";
+    rows.push(`
+      <article class="soft-card">
+        <div class="row">
+          <strong>${escapeHtml(name)}${isProvisional ? ' <span class="chip" style="font-size:0.7rem">暫定</span>' : ""}</strong>
+          <span class="chip">× ${amount}</span>
+        </div>
+        <p class="tiny">${escapeHtml(methods)}</p>
+      </article>
+    `);
+  });
+
+  if (totalCredits > 0) {
+    rows.push(`
+      <article class="soft-card">
+        <div class="row">
+          <strong>折金券（クレジット）</strong>
+          <span class="chip">× ${totalCredits.toLocaleString()}</span>
+        </div>
+        <p class="tiny">協約空間「通貨」周回 · クエスト報酬 · デイリー報酬</p>
+      </article>
+    `);
+  }
+
+  return rows.join("");
+}
+
+function setupGrowthTab(myCosts, materialDetailsMap) {
+  const fromOpts = ASCENSION_STAGES.slice(0, 4)
+    .map((s) => `<option value="${s.value}">${escapeHtml(s.label)}</option>`)
     .join("");
-  return `
-    <table class="data-table">
-      <thead><tr><th>区間</th><th>素材</th><th>必要数</th><th>クレジット</th></tr></thead>
-      <tbody>${body}</tbody>
-    </table>
+  const toOpts = ASCENSION_STAGES.slice(1)
+    .map((s) => `<option value="${s.value}" ${s.value === 4 ? "selected" : ""}>${escapeHtml(s.label)}</option>`)
+    .join("");
+
+  tabGrowth.innerHTML = `
+    <h3 style="margin:0 0 0.6rem">昇進コスト計算</h3>
+    <div class="form-grid filters" style="margin-bottom:1rem">
+      <label>
+        現在の昇進段階
+        <select id="fromStage">${fromOpts}</select>
+      </label>
+      <label>
+        目標昇進段階
+        <select id="toStage">${toOpts}</select>
+      </label>
+    </div>
+    <div id="growthResult" class="stack"></div>
+    <p class="tiny" style="margin-top:0.8rem">
+      ※ provisional（暫定）マークのデータは wiki 等から取得した未確認情報です。ゲーム内で確認次第修正予定。
+    </p>
   `;
+
+  function update() {
+    const fromStage = parseInt(document.getElementById("fromStage").value, 10);
+    const toStage = parseInt(document.getElementById("toStage").value, 10);
+    const result = calcGrowthMaterials(myCosts, fromStage, toStage);
+    document.getElementById("growthResult").innerHTML = renderGrowthResult(result, materialDetailsMap);
+  }
+
+  document.getElementById("fromStage").addEventListener("change", update);
+  document.getElementById("toStage").addEventListener("change", update);
+  update();
 }
 
 async function init() {
@@ -92,12 +184,16 @@ async function init() {
     return;
   }
 
-  const materialMap = new Map(materials.map((item) => [item.id, item.name]));
+  // 全素材情報マップ（入手方法含む）
+  const materialDetailsMap = new Map(materials.map((item) => [item.id, item]));
+
   const myStats = stats.filter((item) => item.character_id === id).sort((a, b) => a.level - b.level);
   const mySkills = skills.filter((item) => item.character_id === id);
-  const myCosts = costs
-    .filter((item) => item.character_id === id)
-    .map((item) => ({ ...item, material_name: materialMap.get(item.material_id) ?? item.material_id }));
+
+  // character_id === "*" の共通コストもマージ
+  const myCosts = costs.filter(
+    (item) => item.character_id === id || item.character_id === "*"
+  );
 
   charName.textContent = character.name;
   metaTag.textContent = `${character.confidence} / v${character.version}`;
@@ -109,10 +205,10 @@ async function init() {
       <p><strong>役割:</strong> ${escapeHtml(toLabel(character.role))}</p>
       <p><strong>武器種:</strong> ${escapeHtml(toLabel(character.weapon_type))}</p>
       <p><strong>最終更新:</strong> ${escapeHtml(toLabel(character.updated_at))}</p>
-      <p><strong>source:</strong> ${escapeHtml(toLabel(character.source))}</p>
-      <p><strong>confidence:</strong> ${escapeHtml(toLabel(character.confidence))}</p>
+      <p><strong>情報ソース:</strong> ${escapeHtml(toLabel(character.source))}</p>
+      <p><strong>確度:</strong> ${escapeHtml(toLabel(character.confidence))}</p>
     </div>
-    <p class="muted">${escapeHtml(toLabel(character.description))}</p>
+    <p class="muted" style="margin-top:0.6rem">${escapeHtml(toLabel(character.description))}</p>
     <h3>ステータス</h3>
     ${renderStatsTable(myStats)}
   `;
@@ -131,10 +227,7 @@ async function init() {
         .join("")
     : `<p class="muted">スキルデータなし</p>`;
 
-  tabGrowth.innerHTML = `
-    <h3>必要素材</h3>
-    ${renderCostTable(myCosts)}
-  `;
+  setupGrowthTab(myCosts, materialDetailsMap);
 
   tabBuild.innerHTML = `
     <article class="soft-card">
