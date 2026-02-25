@@ -9,6 +9,23 @@ const tabSkills = document.getElementById("tab-skills");
 const tabGrowth = document.getElementById("tab-growth");
 const tabBuild = document.getElementById("tab-build");
 
+const ELEM_CLASS = {
+  "物理": "elem-physical",
+  "灼熱": "elem-fire",
+  "寒冷": "elem-ice",
+  "電磁": "elem-elec",
+  "自然": "elem-nature"
+};
+
+const ROLE_CLASS = {
+  "前衛": "role-frontline",
+  "先鋒": "role-vanguard",
+  "重装": "role-defender",
+  "術師": "role-caster",
+  "補助": "role-support",
+  "突撃": "role-assault"
+};
+
 // E0〜E4: 昇進を行うときの from_level（昇進コストのキー）
 const ASCENSION_FROM_LEVELS = [20, 40, 60, 80];
 
@@ -103,14 +120,16 @@ function renderGrowthResult(result, materialDetailsMap) {
       mat && mat.acquisition_methods && mat.acquisition_methods.length
         ? mat.acquisition_methods.join(" · ")
         : "—";
-    const isProvisional = mat && mat.confidence === "provisional";
+    const badge = mat && mat.confidence === "provisional"
+      ? ' <span class="chip" style="font-size:0.68rem;padding:0.1rem 0.4rem">暫定</span>'
+      : "";
     rows.push(`
       <article class="soft-card">
         <div class="row">
-          <strong>${escapeHtml(name)}${isProvisional ? ' <span class="chip" style="font-size:0.7rem">暫定</span>' : ""}</strong>
+          <strong>${escapeHtml(name)}${badge}</strong>
           <span class="chip">× ${amount}</span>
         </div>
-        <p class="tiny">${escapeHtml(methods)}</p>
+        <p class="tiny" style="margin:0.3rem 0 0">${escapeHtml(methods)}</p>
       </article>
     `);
   });
@@ -122,7 +141,7 @@ function renderGrowthResult(result, materialDetailsMap) {
           <strong>折金券（クレジット）</strong>
           <span class="chip">× ${totalCredits.toLocaleString()}</span>
         </div>
-        <p class="tiny">協約空間「通貨」周回 · クエスト報酬 · デイリー報酬</p>
+        <p class="tiny" style="margin:0.3rem 0 0">協約空間「通貨」周回 · クエスト報酬 · デイリー報酬</p>
       </article>
     `);
   }
@@ -139,7 +158,7 @@ function setupGrowthTab(myCosts, materialDetailsMap) {
     .join("");
 
   tabGrowth.innerHTML = `
-    <h3 style="margin:0 0 0.6rem">昇進コスト計算</h3>
+    <h3 style="margin:0 0 0.7rem">昇進コスト計算</h3>
     <div class="form-grid filters" style="margin-bottom:1rem">
       <label>
         現在の昇進段階
@@ -151,8 +170,8 @@ function setupGrowthTab(myCosts, materialDetailsMap) {
       </label>
     </div>
     <div id="growthResult" class="stack"></div>
-    <p class="tiny" style="margin-top:0.8rem">
-      ※ provisional（暫定）マークのデータは wiki 等から取得した未確認情報です。ゲーム内で確認次第修正予定。
+    <p class="tiny" style="margin-top:1rem;color:var(--muted)">
+      ※「暫定」マークはwiki等から取得した未確認情報です。ゲーム内で確認次第修正します。
     </p>
   `;
 
@@ -184,32 +203,38 @@ async function init() {
     return;
   }
 
-  // 全素材情報マップ（入手方法含む）
   const materialDetailsMap = new Map(materials.map((item) => [item.id, item]));
-
   const myStats = stats.filter((item) => item.character_id === id).sort((a, b) => a.level - b.level);
   const mySkills = skills.filter((item) => item.character_id === id);
-
-  // character_id === "*" の共通コストもマージ
   const myCosts = costs.filter(
     (item) => item.character_id === id || item.character_id === "*"
   );
 
   charName.textContent = character.name;
-  metaTag.textContent = `${character.confidence} / v${character.version}`;
+  metaTag.textContent = character.confidence === "confirmed" ? "確認済" : "暫定";
+
+  const ec = ELEM_CLASS[character.element] || "";
+  const rc = ROLE_CLASS[character.role] || "";
+  const stars = "★".repeat(character.rarity);
+  const weaponChip =
+    character.weapon_type && character.weapon_type !== "不明"
+      ? `<span class="chip">${escapeHtml(character.weapon_type)}</span>`
+      : "";
 
   tabOverview.innerHTML = `
-    <div class="kv-grid">
-      <p><strong>レア度:</strong> ★${toLabel(character.rarity)}</p>
-      <p><strong>属性:</strong> ${escapeHtml(toLabel(character.element))}</p>
-      <p><strong>役割:</strong> ${escapeHtml(toLabel(character.role))}</p>
-      <p><strong>武器種:</strong> ${escapeHtml(toLabel(character.weapon_type))}</p>
-      <p><strong>最終更新:</strong> ${escapeHtml(toLabel(character.updated_at))}</p>
-      <p><strong>情報ソース:</strong> ${escapeHtml(toLabel(character.source))}</p>
-      <p><strong>確度:</strong> ${escapeHtml(toLabel(character.confidence))}</p>
+    <div class="char-detail-chips chip-row">
+      <span class="chip ${ec}">${escapeHtml(character.element)}</span>
+      <span class="chip ${rc}">${escapeHtml(character.role)}</span>
+      ${weaponChip}
+      <span class="chip char-stars">${stars}</span>
     </div>
-    <p class="muted" style="margin-top:0.6rem">${escapeHtml(toLabel(character.description))}</p>
-    <h3>ステータス</h3>
+    <p class="char-detail-desc">${escapeHtml(toLabel(character.description))}</p>
+    <p class="char-meta-line">
+      更新: ${escapeHtml(character.updated_at)}
+      &nbsp;·&nbsp; ソース: ${escapeHtml(character.source)}
+      &nbsp;·&nbsp; 確度: ${escapeHtml(character.confidence)}
+    </p>
+    <h3 style="margin:0 0 0.3rem">ステータス</h3>
     ${renderStatsTable(myStats)}
   `;
 

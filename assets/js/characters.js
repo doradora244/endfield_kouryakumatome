@@ -8,6 +8,32 @@ const weaponFilter = document.getElementById("weaponFilter");
 const characterGrid = document.getElementById("characterGrid");
 const characterCount = document.getElementById("characterCount");
 
+const ELEM_CLASS = {
+  "物理": "elem-physical",
+  "灼熱": "elem-fire",
+  "寒冷": "elem-ice",
+  "電磁": "elem-elec",
+  "自然": "elem-nature"
+};
+
+const ROLE_CLASS = {
+  "前衛": "role-frontline",
+  "先鋒": "role-vanguard",
+  "重装": "role-defender",
+  "術師": "role-caster",
+  "補助": "role-support",
+  "突撃": "role-assault"
+};
+
+function iconHtml(character) {
+  const ec = ELEM_CLASS[character.element] || "";
+  const label = character.name.slice(0, 2);
+  if (character.icon_url) {
+    return `<div class="char-icon ${ec}"><img src="${escapeHtml(character.icon_url)}" alt="${escapeHtml(character.name)}" loading="lazy"></div>`;
+  }
+  return `<div class="char-icon ${ec}">${escapeHtml(label)}</div>`;
+}
+
 function fillSelect(select, values) {
   values.forEach((value) => {
     const option = document.createElement("option");
@@ -20,19 +46,35 @@ function fillSelect(select, values) {
 function renderCards(characters) {
   characterCount.textContent = `${characters.length}件`;
   characterGrid.innerHTML = characters
-    .map(
-      (character) => `
-      <article class="info-card">
-        <div class="row">
-          <h3>${escapeHtml(character.name)}</h3>
-          <span class="chip">★${character.rarity}</span>
-        </div>
-        <p class="muted">${escapeHtml(character.description)}</p>
-        <p class="tiny">${escapeHtml(character.element)} / ${escapeHtml(character.role)} / ${escapeHtml(character.weapon_type)}</p>
-        <a class="text-link" href="./character.html?id=${encodeURIComponent(character.id)}">詳細を見る</a>
-      </article>
-    `
-    )
+    .map((character) => {
+      const ec = ELEM_CLASS[character.element] || "";
+      const rc = ROLE_CLASS[character.role] || "";
+      const stars = "★".repeat(character.rarity);
+      const weaponChip =
+        character.weapon_type && character.weapon_type !== "不明"
+          ? `<span class="chip">${escapeHtml(character.weapon_type)}</span>`
+          : "";
+      return `
+        <article
+          class="info-card char-card"
+          data-element="${escapeHtml(character.element)}"
+          onclick="location.href='./character.html?id=${encodeURIComponent(character.id)}'"
+        >
+          <div class="char-card-top">
+            ${iconHtml(character)}
+            <div class="char-card-meta">
+              <div class="char-stars">${stars}</div>
+              <h3>${escapeHtml(character.name)}</h3>
+            </div>
+          </div>
+          <div class="chip-row">
+            <span class="chip ${ec}">${escapeHtml(character.element)}</span>
+            <span class="chip ${rc}">${escapeHtml(character.role)}</span>
+            ${weaponChip}
+          </div>
+        </article>
+      `;
+    })
     .join("");
 }
 
