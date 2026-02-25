@@ -563,6 +563,13 @@ textarea {
 .hero-copy { color: var(--text); }
 .home-page .info-card-cute p { color: var(--text); }
 
+/* ===== 素材カテゴリチップ ===== */
+.cat-ascend { background: #fff2eb; color: #bf4800; border-color: #ffaa70; }
+.cat-skill  { background: #f0e8ff; color: #7020c0; border-color: #c090e0; }
+.cat-gather { background: #eaf8e8; color: #1f7020; border-color: #80c880; }
+.cat-exp    { background: #e8f0ff; color: #1040bf; border-color: #90b0f0; }
+.cat-credit { background: #fffce6; color: #7a5c00; border-color: #ffd060; }
+
 /* ===== キャラ詳細ページ ===== */
 .char-detail-chips { margin-bottom: 0.7rem; }
 .char-detail-desc { margin: 0 0 0.5rem; line-height: 1.6; }
